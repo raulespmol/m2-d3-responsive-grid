@@ -1,5 +1,59 @@
+//Breakpoints
+$small: 576px;
+$medium: 768px;
+$large: 992px;
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+@mixin gridArea($area, $bg) {
+  grid-area: $area;
+  background-color: $bg;
+}
+
+
+.grid {
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: 50px 100px auto 50px;
+  grid-template-areas: 
+  'n'
+  's'
+  'm'
+  'f';
+
+  nav {
+    @include gridArea(n, #055);
+  }
+  section {
+    @include gridArea(s, #099);
+  }
+  main {
+    @include gridArea(m, #bbb);
+  }
+  footer {
+    @include gridArea(f, #033);
+    color: #FFF;
+  }
+
+  @media (min-width: $small) and (max-width: $large){
+    grid-template-columns: 200px auto;
+    grid-template-rows: 50px auto 50px;
+    grid-template-areas: 
+    'n n'
+    's m'
+    'f f';
+  }
+
+  @media (min-width: $large) {
+    grid-template-columns: 300px auto;
+    grid-template-rows: 80px auto 100px;
+    grid-template-areas: 
+    'n s'
+    'n m'
+    'f m';
+  }
 }
