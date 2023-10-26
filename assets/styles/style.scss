@@ -3,6 +3,7 @@ $small: 576px;
 $medium: 768px;
 $large: 992px;
 
+//Generales
 * {
   margin: 0;
   padding: 0;
@@ -12,9 +13,18 @@ $large: 992px;
 @mixin gridArea($area, $bg) {
   grid-area: $area;
   background-color: $bg;
+  padding: 1rem;
 }
 
+@mixin flexCenter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
+//Estilos
+
+//Mobile
 .grid {
   min-height: 100vh;
   display: grid;
@@ -27,33 +37,75 @@ $large: 992px;
 
   nav {
     @include gridArea(n, #055);
+    display: flex;
+    justify-content: space-between;
+    .brand {
+      display: flex;
+      align-items: center;
+    }
+    .nav {
+      display: flex;
+      align-items: center;
+      .links {
+        display: none;
+      }
+      .menu {
+        i {
+          font-size: 1.5rem;
+        }
+      }
+    }
   }
+
   section {
     @include gridArea(s, #099);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    p {
+      font-size: 1.2rem;
+    }
+    select {
+      width: 100%;
+      height: 2rem;
+    }
   }
+
   main {
     @include gridArea(m, #bbb);
+    display: grid;
+    grid-template-rows: minmax(250px, 500px);
+    grid-auto-rows: minmax(250px, 500px);
   }
+
   footer {
     @include gridArea(f, #033);
+    @include flexCenter;
     color: #FFF;
   }
+}
 
-  @media (min-width: $small) and (max-width: $large){
-    grid-template-columns: 200px auto;
-    grid-template-rows: 50px auto 50px;
-    grid-template-areas: 
-    'n n'
-    's m'
-    'f f';
+//Tablet
+@media (min-width: $small) and (max-width: $large){
+  .grid {
+  grid-template-columns: 200px auto;
+  grid-template-rows: 50px auto 50px;
+  grid-template-areas: 
+  'n n'
+  's m'
+  'f f';
   }
+}
 
-  @media (min-width: $large) {
-    grid-template-columns: 300px auto;
-    grid-template-rows: 80px auto 100px;
-    grid-template-areas: 
-    'n s'
-    'n m'
-    'f m';
+//Desktop
+@media (min-width: $large) {
+  .grid {
+  grid-template-columns: 300px auto;
+  grid-template-rows: 80px auto 100px;
+  grid-template-areas: 
+  'n s'
+  'n m'
+  'f m';
   }
 }
