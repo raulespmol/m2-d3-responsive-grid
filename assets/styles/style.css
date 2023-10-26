@@ -71,11 +71,32 @@
     grid-template-rows: 50px auto 50px;
     grid-template-areas: "n n" "s m" "f f";
   }
+  .grid nav .nav .links {
+    display: flex;
+    gap: 1rem;
+  }
+  .grid nav .nav .menu {
+    display: none;
+  }
 }
 @media (min-width: 992px) {
   .grid {
     grid-template-columns: 300px auto;
     grid-template-rows: 80px auto 100px;
     grid-template-areas: "n s" "n m" "f m";
+  }
+  .grid nav {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  .grid nav .nav .links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+  .grid nav .nav .menu {
+    display: none;
   }
 }
