@@ -96,16 +96,16 @@ $large: 992px;
       font-size: 1.2rem;
       color: #FFF;    }
     select {
-      width: 100%;
+      text-align: center;
     }
   }
 
   main {
     @include gridArea(m, #222);
     display: grid;
-    grid-template-columns: minmax(180px, 1fr);
-    grid-template-rows: minmax(250px, 500px);
-    grid-auto-rows: minmax(250px, 500px);
+    grid-template-columns: minmax(200px, 1fr);
+    grid-template-rows: minmax(450px,600px);
+    grid-auto-rows: minmax(450px, 600px);
     gap: 2rem;
 
     background-image: url('../img/doom-eternal-bg.jpg');
@@ -134,13 +134,14 @@ $large: 992px;
         flex-direction: column;
         align-items: center;
         background-color: $black;
-        padding: 10px;
+        padding: 1rem;
         h5 {
           font-size: 1.5rem;
           font-family: 'Orbitron', sans-serif;
+          margin-bottom: 1rem;
         }
         p {
-          margin-bottom: 10px;
+          margin-bottom: 1rem;
           font-weight: 300;
           text-align: center;
         }
@@ -149,19 +150,13 @@ $large: 992px;
           padding: 5px;
           display: flex;
           align-items: center;
-          justify-content: space-between;
-          .precio{
-            display: flex;
-            align-items: center;
-            gap:5px;
-            font-size: 1.2rem;
-          }
+          justify-content: center;
           button {
             background-color: #FFF;
             border: none;
             color: $dark;
-            padding: 5px 10px;
-            border-radius: 5px;
+            padding: 5px 40px;
+            font-size: 1.3rem;
             &:hover {
               cursor: pointer;
               background-color: $secondary;
@@ -206,7 +201,7 @@ $large: 992px;
     }
 
     main {
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     }
   }
 }
@@ -245,7 +240,7 @@ $large: 992px;
     }
 
     main {
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     }
   }
 }
