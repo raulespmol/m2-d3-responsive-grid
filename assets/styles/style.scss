@@ -24,7 +24,7 @@ $large: 992px;
 
 //Estilos
 
-//Mobile
+//Base (Mobile)
 .grid {
   min-height: 100vh;
   display: grid;
@@ -75,8 +75,73 @@ $large: 992px;
   main {
     @include gridArea(m, #bbb);
     display: grid;
-    grid-template-rows: minmax(250px, 500px);
-    grid-auto-rows: minmax(250px, 500px);
+    grid-template-rows: minmax(250px, 400px);
+    grid-auto-rows: minmax(250px, 400px);
+    gap: 1rem;
+
+    .card {
+      display: flex;
+      flex-direction: column;;
+      color: white;
+      background-color: gray;
+      &> * { 
+        display: flex;
+        justify-content: center;
+      }
+      .card-body {
+        @include flexCenter();
+        overflow: hidden;
+        height: 100%;
+        img {
+          width: 220px;
+          filter: saturate(0.2);
+          &:hover{
+            transform: scale(1.1);
+            filter: saturate(1);
+            cursor: pointer;
+          }
+        }
+      }
+      .card-desc{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: green;
+        padding: 10px;
+        h5 {
+          font-size: 1.5rem;
+        }
+        p {
+          margin-bottom: 10px;
+          font-weight: 300;
+          text-align: center;
+        }
+        .card-footer {
+          width: 100%;
+          padding: 5px;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          .precio{
+            display: flex;
+            align-items: center;
+            gap:5px;
+            font-size: 1.2rem;
+          }
+          button {
+            background-color: blue;
+            border: none;
+            color: #FFF;
+            padding: 5px 10px;
+            border-radius: 5px;
+            &:hover {
+              cursor: pointer;
+              background-color: red;
+            }
+          }
+        }
+      }
+    }
   }
 
   footer {
@@ -107,6 +172,10 @@ $large: 992px;
         }
       }
     }
+
+    main {
+      grid-template-columns: repeat(2, 1fr);
+    }
   }
 }
 
@@ -120,21 +189,25 @@ $large: 992px;
   'n m'
   'f m';
 
-  nav {
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    .nav {
-      .links {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 1rem;
-      }
-      .menu {
-        display: none;
+    nav {
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      .nav {
+        .links {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 1rem;
+        }
+        .menu {
+          display: none;
+        }
       }
     }
-  }
+
+    main {
+      grid-template-columns: repeat(3, 1fr);
+    }
   }
 }

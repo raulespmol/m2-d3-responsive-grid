@@ -52,8 +52,74 @@
   background-color: #bbb;
   padding: 1rem;
   display: grid;
-  grid-template-rows: minmax(250px, 500px);
-  grid-auto-rows: minmax(250px, 500px);
+  grid-template-rows: minmax(250px, 400px);
+  grid-auto-rows: minmax(250px, 400px);
+  gap: 1rem;
+}
+.grid main .card {
+  display: flex;
+  flex-direction: column;
+  color: white;
+  background-color: gray;
+}
+.grid main .card > * {
+  display: flex;
+  justify-content: center;
+}
+.grid main .card .card-body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  height: 100%;
+}
+.grid main .card .card-body img {
+  width: 220px;
+  filter: saturate(0.2);
+}
+.grid main .card .card-body img:hover {
+  transform: scale(1.1);
+  filter: saturate(1);
+  cursor: pointer;
+}
+.grid main .card .card-desc {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: green;
+  padding: 10px;
+}
+.grid main .card .card-desc h5 {
+  font-size: 1.5rem;
+}
+.grid main .card .card-desc p {
+  margin-bottom: 10px;
+  font-weight: 300;
+  text-align: center;
+}
+.grid main .card .card-desc .card-footer {
+  width: 100%;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.grid main .card .card-desc .card-footer .precio {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 1.2rem;
+}
+.grid main .card .card-desc .card-footer button {
+  background-color: blue;
+  border: none;
+  color: #FFF;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+.grid main .card .card-desc .card-footer button:hover {
+  cursor: pointer;
+  background-color: red;
 }
 .grid footer {
   grid-area: f;
@@ -78,6 +144,9 @@
   .grid nav .nav .menu {
     display: none;
   }
+  .grid main {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 @media (min-width: 992px) {
   .grid {
@@ -98,5 +167,8 @@
   }
   .grid nav .nav .menu {
     display: none;
+  }
+  .grid main {
+    grid-template-columns: repeat(3, 1fr);
   }
 }
