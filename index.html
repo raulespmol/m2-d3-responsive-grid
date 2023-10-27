@@ -10,11 +10,13 @@
 <body>
   <div class="grid">
     <nav>
-      <div class="brand">logo</div>
+      <div class="brand">
+        <img src="./assets/img/logo-doom.png" alt="">
+      </div>
       <div class="nav">
         <div class="links">
           <a>Inicio</a>
-          <a>Catalogo</a>
+          <a class="active">Catalogo</a>
           <a>Ofertas</a>
           <a>Contacto</a>
         </div>
@@ -28,18 +30,35 @@
       <p>Ordernar por:</p>
       <select>
         <option>Precio</option>
-        <option>Marca</option>
-        <option>Color</option>
+        <option>Año</option>
+        <option>Plataforma</option>
       </select>
     </section>
 
     <main>
       <div class="card">
         <div class="card-body">
-          <img src="https://picsum.photos/200/300" alt="">
+          <img src="./assets/img/doom-2016.jpg"">
         </div>
         <div class="card-desc">
-          <h5>Escudo Deku</h5>
+          <h5>Doom (2016)</h5>
+          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+          <div class="card-footer">
+            <div class="precio">
+              
+              <span>25</span>
+            </div>
+            <button>Añadir</button>
+          </div>
+        </div>
+      </div>
+      
+      <div class="card">
+        <div class="card-body">
+          <img src="./assets/img/doom-eternal.jpg">
+        </div>
+        <div class="card-desc">
+          <h5>Doom Eternal</h5>
           <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
           <div class="card-footer">
             <div class="precio">
@@ -52,24 +71,44 @@
       </div>
       
       <div class="card">
-        <h3>card</h3>
+        <div class="card-body">
+          <img src="./assets/img/ancient-gods-1.jpg">
+        </div>
+        <div class="card-desc">
+          <h5>Ancient Gods I</h5>
+          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+          <div class="card-footer">
+            <div class="precio">
+              <img src="./assets/img/rupee.png" alt="" class="rupias"> 
+              <span>25</span>
+            </div>
+            <button>Añadir</button>
+          </div>
+        </div>
       </div>
+      
       <div class="card">
-        <h3>card</h3>
+        <div class="card-body">
+          <img src="./assets/img/ancient-gods-2.jpg">
+        </div>
+        <div class="card-desc">
+          <h5>Ancient Gods II</h5>
+          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+          <div class="card-footer">
+            <div class="precio">
+              <img src="./assets/img/rupee.png" alt="" class="rupias"> 
+              <span>25</span>
+            </div>
+            <button>Añadir</button>
+          </div>
+        </div>
       </div>
-      <div class="card">
-        <h3>card</h3>
-      </div>
-      <div class="card">
-        <h3>card</h3>
-      </div>
-      <div class="card">
-        <h3>card</h3>
-      </div>
+      
+      
     </main>
 
     <footer>
-      footer
+      <img src="./assets/img/logo-bethesda.png" alt="">
     </footer>
   </div>
 </body>
