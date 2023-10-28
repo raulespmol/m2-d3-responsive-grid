@@ -43,10 +43,10 @@
   cursor: pointer;
 }
 .grid nav .nav .links .active {
-  color: #9f1700;
+  color: #FC0B0A;
 }
 .grid nav .nav .links .active:hover {
-  color: #9f1700;
+  color: #FC0B0A;
 }
 .grid nav .nav .menu i {
   font-size: 1.5rem;
@@ -77,7 +77,7 @@
   grid-template-rows: minmax(450px, 600px);
   grid-auto-rows: minmax(450px, 600px);
   gap: 2rem;
-  background-image: url("../img/doom-eternal-bg.jpg");
+  background-image: url("../img/lava-bg.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -86,7 +86,7 @@
   display: flex;
   flex-direction: column;
   color: white;
-  background-color: rgba(0, 0, 0, 0.5019607843);
+  background-color: rgba(0, 0, 0, 0.4392156863);
 }
 .grid main .card > * {
   display: flex;
@@ -106,7 +106,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #000;
+  background-color: rgba(0, 0, 0, 0.5647058824);
   padding: 1rem;
 }
 .grid main .card .card-desc h5 {
@@ -115,6 +115,7 @@
   margin-bottom: 1rem;
 }
 .grid main .card .card-desc p {
+  color: #d8d7d7;
   margin-bottom: 1rem;
   font-weight: 300;
   text-align: center;
@@ -135,7 +136,7 @@
 }
 .grid main .card .card-desc .card-footer button:hover {
   cursor: pointer;
-  background-color: #9f1700;
+  background-color: #FC0B0A;
   color: #FFF;
 }
 .grid footer {
@@ -147,8 +148,28 @@
   justify-content: center;
   color: #d8d7d7;
 }
-.grid footer img {
+.grid footer .footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  gap: 1rem;
+}
+.grid footer .footer-content img {
   width: 150px;
+}
+.grid footer .footer-content .social {
+  display: flex;
+  gap: 1rem;
+}
+.grid footer .footer-content .social a {
+  font-size: 1.3rem;
+  color: #d8d7d7;
+  text-decoration: none;
+}
+.grid footer .footer-content .social a:hover {
+  color: #FC0B0A;
 }
 
 @media (min-width: 576px) and (max-width: 992px) {
@@ -196,5 +217,8 @@
   }
   .grid main {
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  }
+  .grid footer .footer-content {
+    flex-direction: column;
   }
 }

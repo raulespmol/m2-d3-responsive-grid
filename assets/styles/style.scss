@@ -5,7 +5,7 @@ $black: #000;
 $dark: #222;
 $grey-normal: #8a8a8a;
 $grey-light: #d8d7d7;
-$secondary: #9f1700;
+$secondary: #FC0B0A;
 
 //Breakpoints
 $small: 576px;
@@ -108,7 +108,7 @@ $large: 992px;
     grid-auto-rows: minmax(450px, 600px);
     gap: 2rem;
 
-    background-image: url('../img/doom-eternal-bg.jpg');
+    background-image: url('../img/lava-bg.jpg');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -116,7 +116,7 @@ $large: 992px;
       display: flex;
       flex-direction: column;;
       color: white;
-      background-color: #00000080;
+      background-color: #00000070;
       &> * { 
         display: flex;
         justify-content: center;
@@ -133,7 +133,7 @@ $large: 992px;
         display: flex;
         flex-direction: column;
         align-items: center;
-        background-color: $black;
+        background-color: #00000090;
         padding: 1rem;
         h5 {
           font-size: 1.5rem;
@@ -141,6 +141,7 @@ $large: 992px;
           margin-bottom: 1rem;
         }
         p {
+          color: $grey-light;
           margin-bottom: 1rem;
           font-weight: 300;
           text-align: center;
@@ -170,10 +171,30 @@ $large: 992px;
 
   footer {
     @include gridArea(f, #141414);
-    @include flexCenter;
+    @include flexCenter();
     color: $grey-light;
-    img {
-      width: 150px;
+    .footer-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      height: 100%;
+      gap: 1rem;
+      img {
+        width: 150px;
+      }
+      .social {
+        display: flex;
+        gap: 1rem;
+        a {
+          font-size: 1.3rem;
+          color: $grey-light;
+          text-decoration: none;
+          &:hover {
+            color: $secondary;
+          }
+        }
+      }
     }
   }
 }
@@ -241,6 +262,12 @@ $large: 992px;
 
     main {
       grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    }
+
+    footer {
+      .footer-content {
+        flex-direction: column;
+      }
     }
   }
 }
